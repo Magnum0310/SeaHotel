@@ -1,12 +1,43 @@
-export default function Room() {
-  return (
-    <div className="room">
-    
-    <h2>Welcome</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+import {NavLink} from "react-router-dom"
+import HomeIcon from '@mui/icons-material/Home';
 
+export default function Room(props) {
+
+  function checkRoom(event){
+    console.log("checkRoom clicked!")
+    console.log(event.target.name)
+    props.room(event.target.name)
+
+  }
+
+  return (
+    <div className="roomPage">
+    
+    <div className="roomWrapper">
+      <div className="roomBannerText">Room</div>
+      <div className="roomBannerImage">Room Image</div>
+      <div className="roomDescription">Room Description</div>
+      <div className="roomDescriptionImage">Room Description Image</div>
+      <div className="roomFirst">
+        <div className="roomFirst--active">
+          <NavLink to="book" className="bookButton" onClick={checkRoom} name="room_A">Book</NavLink>
+        </div>
+      </div>
+      <div className="roomSecond">
+        <div className="roomSecond--active">
+          <NavLink to="book" className="bookButton" onClick={checkRoom} name="room_B">Book</NavLink>
+        </div>
+      </div>
+      <div className="roomThird">
+        <div className="roomThird--active">
+          <NavLink to="book" className="bookButton" onClick={checkRoom} name="room_C">Book</NavLink>
+        </div>
+      </div>
+    </div>
 </div>
   )
 }
+
+
+
+

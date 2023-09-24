@@ -1,8 +1,12 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Building from "../Building_Facade.jpg"
 
 
 export default function Home(){
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return(
     <div className="homePage">
@@ -32,9 +36,9 @@ export default function Home(){
             </div>
         </div>
         <div className="events">
-                <div className="wedding">Wedding</div>
+                <div className="wedding"></div>
                 <div className="eventDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                <div className="surf">Surfing</div>
+                <div className="surf"></div>
         </div>
     </div>
     )

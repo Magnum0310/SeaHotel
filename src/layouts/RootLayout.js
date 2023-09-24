@@ -38,7 +38,7 @@ export default function RootLayout(){
                             <li>site@seahotel.com</li>
                         </ul>
                     </div>
-                    <div className="copyright">© Copyright {getYear()} </div>
+                    <div className="copyright">© Copyright {getYear()}</div>
                 </div>
             </footer>
         </div>

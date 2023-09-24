@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { 
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  NavLink,
+  RouterProvider
+} from "react-router-dom"
+import React,{ useState } from "react"
+
+
+//Layout//
+import RootLayout from "./layouts/RootLayout"
+import PageLayout from "./layouts/PageLayout"
+
+
+//Pages//
+import Home from "./pages/Home"
+import Room from "./pages/Room"
+import Dinning from "./pages/Dinning"
+import Event from "./pages/Event"
+import Book from "./pages/Book"
+
+//Room Types//
+
+var roomBook = "";
+
+function roomType(type){
+  roomBook = type
+}
+
+function updateRoomType(){
+  return roomBook
+}
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout/>}>
+      <Route index element={<Home/>}/>
+      <Route path="room" element={<PageLayout/>}>
+        <Route index element={<Room room={roomType}/>}/>
+        <Route path="book" element={<Book onClick={updateRoomType}/>}/>
+      </Route>
+      <Route path="dinning" element={<Dinning/>}/>
+      <Route path="event" element={<Event/>}/>
+    </Route>
+  )
+)
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router}/>
+    
 }
 
 export default App;
