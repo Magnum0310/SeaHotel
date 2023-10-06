@@ -1,6 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import {NavLink} from 'react-router-dom'
+
+/*Images*/
 import roomAImage from "../HotelSite/Rooms/Room1.jpg"
+
+
 
 /*Pages*/
 import RoomType from "../components/RoomType"
@@ -92,9 +96,6 @@ export default function Book(props) {
     console.log(bookState)
   }
 
-
-
-
   /*///////////////////////
   ///   Load Page @ Top///
   ///      position    //
@@ -141,7 +142,7 @@ export default function Book(props) {
         </div>
         <div className="priceRoom">{totalPrice}</div>
         <div className="bookNow" onClick={checkState}><ButtonForm buttonState={checkState}/></div>
-        <div className="modalBook">{bookState && <Modal modalState={checkState} checkIn={dateIn} checkOut={dateOut} totalBookDates={totalBookDates} totalBookPrice={totalPrice}/>}</div>
+        <div className="modalBook">{bookState && <Modal modalState={checkState} roomType={nameRoom} checkIn={dateIn} checkOut={dateOut} totalBookDates={totalBookDates} totalBookPrice={totalPrice} />}</div>
         <div className="homeButton"><NavLink to="/"><HomeIcon/>Home</NavLink></div>   
       </div>
     </div>

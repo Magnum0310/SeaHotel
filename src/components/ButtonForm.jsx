@@ -13,7 +13,7 @@ export default function ButtonForm(props) {
   return (
     
     <div>
-        <button onClick={onClick}>BookButton</button>
+        <button onClick={onClick}>Book now!</button>
     </div>
   
     )

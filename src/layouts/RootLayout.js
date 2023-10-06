@@ -17,16 +17,11 @@ export default function RootLayout(){
                     </ul>
                 </nav>
             </header>
-        <nav className="sideBar">
-            <li className="sideBarLogo instagram"><span></span></li>
-            <li className="sideBarLogo facebook"><span></span></li>
-            <li className="sideBarLogo pinterest"><span></span></li>
-        </nav>
-
-            <main>
-                <Outlet/>
-            </main>
-
+        
+                <main>
+                    <Outlet/>
+                </main>
+        
             <footer>
                 <div className="footerArea">
                     <div className="hotelLogo"><h1>Sea Hotel</h1></div>
@@ -44,3 +39,14 @@ export default function RootLayout(){
         </div>
     )
 } 
+
+
+
+
+
+
+{/* <nav className="sideBar">
+<li className="sideBarLogo instagram"><span></span></li>
+<li className="sideBarLogo facebook"><span></span></li>
+<li className="sideBarLogo pinterest"><span></span></li>
+</nav> */}
