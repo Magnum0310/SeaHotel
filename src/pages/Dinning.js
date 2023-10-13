@@ -24,6 +24,7 @@ import ArrowGold from "../HotelSite/Menu/arrowDark.svg"
 import ArrowGray from "../HotelSite/Menu/arrowGray.svg"
 
 import BorderUpperRightWhite from "../HotelSite/Menu/border/borderUpperWhite.svg"
+import BorderUpperLeftWhite from "../HotelSite/Menu/border/borderUpperLeftWhite.svg"
 import BorderLowerRightWhite from "../HotelSite/Menu/border/borderLowerRightWhite.svg"
 import BorderUpperGold from "../HotelSite/Menu/border/borderUpperGold.svg"
 import BorderLowerWhite from "../HotelSite/Menu/border/borderLowerWhite.svg"
@@ -53,6 +54,19 @@ import BubblesClearLarge from "../HotelSite/Menu/bubbles/clear/bubbleClearLarge.
 import BubblesClearMedium from "../HotelSite/Menu/bubbles/clear/bubbleClearMedium.svg"
 import BubblesClearSmallfrom from "../HotelSite/Menu/bubbles/clear/bubbleClearSmall.svg"
 
+//==ORNAMENT==//
+import OrnamentLowerLeft from "../HotelSite/Menu/ornament/ornamentLowerLeft.svg"
+import OrnamentLowerRight from "../HotelSite/Menu/ornament/ornamentLowerRight.svg"
+import OrnamentUpperLeft from "../HotelSite/Menu/ornament/ornamentUpperLeft.svg"
+import OrnamentUpperRight from "../HotelSite/Menu/ornament/ornamentUpperRight.svg"
+import OrnamentCenter from "../HotelSite/Menu/ornament/ornamentCenter.svg"
+import OrnamentLine from "../HotelSite/Menu/ornament/ornamentLine.svg"
+
+//==Sunset==//
+import GrayCircle from "../HotelSite/Menu/sunset/darkCircle.svg"
+import GraySand from "../HotelSite/Menu/sunset/darkSand.svg"
+import SunSetTree from "../HotelSite/Menu/sunset/palmTreeGroup.svg"
+import CircleFrame from "../HotelSite/Menu/sunset/circleFrameWide.svg"
 
 export default function Dinning() {
 
@@ -94,7 +108,7 @@ export default function Dinning() {
   // const breakfastMenuBarOffset = 1.25;
   // const lunchMenuBarOffset = 3.55;
   // const dinnerMenuBarOffset = 6.05;
-  const breakfastMenuBarOffset = 2.25;
+  const breakfastMenuBarOffset = 2.3;
   const lunchMenuBarOffset = 4.55;
   const dinnerMenuBarOffset = 7.05;
 
@@ -117,6 +131,7 @@ export default function Dinning() {
   
   const slowBlurBoxSpeed = .9;
   const fastBlurBoxSpeed = 2.9;
+  const ornamentSpeedPieces = .2;
   
   const parallax = useRef()
 
@@ -327,8 +342,6 @@ export default function Dinning() {
         margin:'0 auto auto auto',
         paddingBottom:'150px',
         zIndex:'-100',
-        // backgroundColor:'rgb(217 217 217/ 0.5)',
-        // backdropFilter:'blur(10px)'
         }}>
     </ParallaxLayer>
 
@@ -406,7 +419,7 @@ export default function Dinning() {
 
 
   {/*---------------------------*/}
-  {/*      Daily Menu exit      */}
+  {/*   Breakfast Menu exit     */}
   {/*---------------------------*/}
 
     <ParallaxLayer
@@ -419,16 +432,15 @@ export default function Dinning() {
         width:'100%',
         height:'15%',
         top:'300px',
-        zIndex:'70',
+        zIndex:'80',
         margin:'0 auto 0 auto',
-        // backgroundColor:'rgb(217 217 217/ 0.5)',
         backgroundColor:'#5E5A58',
         backdropFilter:'blur(30px)',
         display:'grid',
         placeItems:'center'}}>
-        <p>first</p>
 
         <ParallaxLayer
+          onClick={() => parallax.current.scrollTo(6.45)}
           style={{
             position:'relative',
             backgroundImage:`url(${Wine})`,
@@ -436,61 +448,78 @@ export default function Dinning() {
             backgroundPosition:'bottom center',
             height:'100%',
           }}>
-
         </ParallaxLayer>
 
     </ParallaxLayer>
 
+
+    {/* Breakfast Banner */}
+
     <ParallaxLayer
-          speed={1}
+          speed={1.0}
           style={{
             position:'relative',
             background:'#5E5A58',
-            height:'12%',
+            height:'14%',
             top:'2000px',
-            zIndex:'50'
+            zIndex:'50',
+            color:'red',
+            fontSize:'10rem',
+            display:'flex',
+            justifyContent:'flex-end',
+            flexDirection:'column',
+            alignContent:'center',
+            textAlign:'center',
+            paddingBottom:'300px'
           }}>
+          <p>Breakfast</p>
+</ParallaxLayer>
            <ParallaxLayer
-           offset={1.9}
+           offset={2.4}
            speed={.1}
             style={{
               backgroundImage:`url(${Arrow})`,
-              top:'-450px',
-              height:'30%',
+              top:'-60px',
+              height:'2%',
               left:'35.8%',
               width:'1200px',
-              zIndex:'80'
+              zIndex:'10'
             }}>
           </ParallaxLayer>
           <ParallaxLayer
-            offset={1.9}
+            offset={2.4}
             speed={.3}
             style={{
               backgroundImage:`url(${ArrowGold})`,
-              top:'-300px',
-              height:'30%',
+              top:'-20px',
+              height:'2%',
               left:'35.8%',
               width:'1200px',
-              zIndex:'80',
+              zIndex:'30',
               scale:'2'
             }}>
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.9}
+            offset={2.4 }
             speed={.5}
             style={{
               backgroundImage:`url(${ArrowGray})`,
-              top:'-200px',
-              height:'30%',
+              top:'-10px',
+              height:'2%',
               left:'35.8%',
               width:'1200px',
-              zIndex:'90',
+              zIndex:'40',
               scale:'2.5'
             }}>
           </ParallaxLayer>
 
-    </ParallaxLayer>
+    
+
+
+  {/*---------------------------*/}
+  {/* Breakfast Ornament Banner */}
+  {/*---------------------------*/}
 
     <ParallaxLayer
       offset={1.9}
@@ -504,21 +533,155 @@ export default function Dinning() {
         top:'800px',
         zIndex:'60',
         margin:'0 auto 0 auto',
-        // backgroundColor:'rgb(217 217 217/ 0.5)',
-        backgroundColor:'firebrick',
+        backgroundColor:'rgb(217 217 217/ 0.5)',
         backdropFilter:'blur(30px)',
+        // backgroundColor:'purple',
         display:'grid',
         placeItems:'center'}}>
 
         <ParallaxLayer
+          style={{
+            // background:'green',
+            height:'1200px',
+            width:'100%',
+            top:'1300px',
+            display:'grid',
+            gridTemplateColumns:'1fr 1fr',
+            gridTemplateRows:'1fr 1fr 1fr',
+            columnGap:'500px',
+          }}
+          >
+
+  {/*-------------------------------*/}
+  {/* Breakfast Ornament Banner Left*/}
+  {/*-------------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/1/2/2',
+            height:'60%',
+            margin:'auto',
+            top:'700px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={.25}
+          style={{
+            backgroundImage:`url(${OrnamentLine})`,
+            backgroundSize:'100% 300%',
+            backgroundPosition:'center',
+            gridArea:'2/1/3/2',
+            height:'70%',
+            margin:'auto 150px auto auto',
+            top:'500px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/1/4/2',
+            height:'60%',
+            margin:'auto',
+            top:'200px'}
+            }>
+          </ParallaxLayer>
+
+
+
+  {/*--------------------------------*/}
+  {/* Breakfast Ornament Banner Right*/}
+  {/*--------------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/2/2/3',
+            height:'60%',
+            margin:'auto',
+            top:'700px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={.25}
+          style={{
+            backgroundImage:`url(${OrnamentLine})`,
+            backgroundSize:'100% 300%',
+            backgroundPosition:'left',
+            gridArea:'2/2/3/3',
+            height:'70%',
+            margin:'auto auto auto 150px',
+            top:'500px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/2/4/3',
+            height:'60%',
+            margin:'auto',
+            top:'200px'}
+            }>
+          </ParallaxLayer>
+
+        </ParallaxLayer>
+
+  {/*---------------------------*/}
+  {/*   Breakfast Banner Exit   */}
+  {/*---------------------------*/}
+
+        <ParallaxLayer
           speed={1}
           style={{
-            background:'pink',
+            background:'#CEA86A',
             height:'90%',
             top:'1500px',
           }}>
+          
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={2.1}
+          style={{
+            background:'rgb(217 217 217 / 0.9)',
+            // opacity:'.5',
+            height:'60%',
+            top:'5800px',
+          }}>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={3}
+          style={{
+            background:'rgb(206 168 106 / 0.5)',
+            backdropFilter:'blur(10px)',
+            // opacity:'.3',
+            height:'50%',
+            top:'7450px',
+          }}>
         </ParallaxLayer>
     </ParallaxLayer>
+
+
+  {/*---------------------------*/}
+  {/*        Click Scroll       */}
+  {/*---------------------------*/}
 
     <ParallaxLayer
       offset={1.97}
@@ -538,6 +701,7 @@ export default function Dinning() {
         placeItems:'center'}}>
 
         <ParallaxLayer
+          onClick={() => parallax.current.scrollTo(3.75)}
           style={{  
             backgroundImage:`url(${Emblem})`,
             backgroundSize:'20%',
@@ -560,13 +724,12 @@ export default function Dinning() {
         top:'400px',
         zIndex:'90',
         margin:'0 auto 0 auto',
-        // backgroundColor:'rgb(62 62 62/ 0.5)',
         backgroundColor:'#3E3E3E',
         backdropFilter:'blur(20px)',
         display:'grid',
         placeItems:'center'}}>
         <ParallaxLayer
-          onClick={() => parallax.current.scrollTo(2.2)}
+          onClick={() => parallax.current.scrollTo(1.78)}
           style={{
             backgroundImage:`url(${Coffee})`,
             backgroundSize:'20%',
@@ -577,9 +740,176 @@ export default function Dinning() {
     </ParallaxLayer>
 
 
+  {/*---------------------------*/}
+  {/*        Lunch Banner       */}
+  {/*---------------------------*/}
+
+    <ParallaxLayer
+          offset={firstBlurBox}
+          // offset={3.97}
+          speed={0.9}
+          style={{
+            position:'relative',
+            background:'#5E5A58',
+            background:'rgb(62 62 62 /0.5)',
+            height:'5%',
+            top:'-1700px',
+            zIndex:'50',
+            color:'white',
+            fontSize:'10rem',
+            textAlign:'center',
+            paddingBottom:'0px',
+            paddingTop:'175px',
+          }}>
+          <p>Lunch</p>
+        
+    </ParallaxLayer>
+    
+           <ParallaxLayer
+            offset={4.7}
+            speed={.1}
+             style={{
+               backgroundImage:`url(${Arrow})`,
+               top:'-100px',
+               height:'2%',
+               left:'2%',
+               width:'1200px',
+               zIndex:'7'
+             }}>
+            </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={4.7}
+            speed={.3}
+            style={{
+              backgroundImage:`url(${ArrowGold})`,
+              top:'-50px',
+              height:'2%',
+              left:'2%',
+              width:'1200px',
+              zIndex:'8',
+              scale:'2'
+            }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={4.7}
+            speed={1.3}
+            style={{
+              backgroundImage:`url(${ArrowGray})`,
+              top:'250px',
+              height:'2%',
+              left:'2%',
+              width:'1200px',
+              zIndex:'9',
+              scale:'2.5'
+            }}>
+          </ParallaxLayer>
+
+
 
   {/*---------------------------*/}
-  {/*      Breakfast Slides     */}
+  {/*    Lunch Ornament Banner  */}
+  {/*---------------------------*/}
+
+    <ParallaxLayer
+      offset={firstBlurBox}
+      speed={3}
+      style={{
+        textAlign:'center',
+        // background:'green',
+        fontSize:'7rem',
+        width:'100%',
+        height:'15%',
+        top:'2280px',
+        zIndex:'60',
+        margin:'0 auto 0 auto',
+        display:'grid',
+        placeItems:'center'}}>
+
+
+        <ParallaxLayer
+          style={{
+            height:'1200px',
+            width:'100%',
+            display:'grid',
+            gridTemplateColumns:'1fr 1fr',
+            gridTemplateRows:'1fr 1fr 1fr',
+            columnGap:'500px',
+          
+          }}
+          >
+
+  {/*---------------------------*/}
+  {/*    Lunch Ornament Left    */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/1/2/2',
+            height:'60%',
+            margin:'auto',
+            top:'950px'
+            }
+            }>
+          </ParallaxLayer>
+
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/1/4/2',
+            height:'60%',
+            margin:'auto',
+            top:'0px'}
+            }>
+          </ParallaxLayer>
+
+
+  {/*---------------------------*/}
+  {/*   Lunch Ornament Right    */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/2/2/3',
+            height:'60%',
+            margin:'auto',
+            top:'950px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/2/4/3',
+            height:'60%',
+            margin:'auto',
+            top:'0px'}
+            }>
+          </ParallaxLayer>
+
+        </ParallaxLayer>
+      </ParallaxLayer>
+
+
+
+  {/*---------------------------*/}
+  {/*       Bubble Slides       */}
   {/*---------------------------*/}
 
 
@@ -587,10 +917,6 @@ export default function Dinning() {
       offset={1.4}
       speed={.4}
       style={{
-        // backgroundImage:`url(${BorderCenterWhite})`,
-        // backgroundColor:'black',
-        // backgroundSize:'contain',
-        // backgroundPosition:'center',
         height:'20%',
         width:'100%',
         zIndex:'50',
@@ -605,7 +931,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearGroup})`,
           backgroundSize:'contain',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'1/1/2/2',
           top:'400px',
           left:'-200px',
@@ -619,7 +944,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearGroup})`,
           backgroundSize:'contain',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'1/2/2/3',
           top:'600px',
           height:'100%',
@@ -646,7 +970,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesSolidGroup})`,
           backgroundSize:'80%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/1/3/2',
           left:'200px',
           top:'500px',
@@ -654,17 +977,12 @@ export default function Dinning() {
           width:'100%',}}>
         </ParallaxLayer>
 
-  {/*---------------------------*/}
-  {/*           Plain           */}
-  {/*---------------------------*/}
-
         <ParallaxLayer
           speed={1.4}
           style={{
           backgroundImage:`url(${BubblesPlainLightMedium})`,
           backgroundSize:'10%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/1/3/2',
           left:'300px',
           top:'600px',
@@ -678,7 +996,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesPlainWhiteMedium})`,
           backgroundSize:'10%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/1/3/2',
           left:'0px ',
           top:'900px',
@@ -692,7 +1009,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesSolidMedium})`,
           backgroundSize:'10%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/1/3/2',
           left:'-200px ',
           top:'800px',
@@ -719,7 +1035,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesPlainDarkSmall})`,
           backgroundSize:'5%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/2/3/3',
           left:'200px',
           top:'600px',
@@ -732,7 +1047,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearLarge})`,
           backgroundSize:'15%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/2/3/3',
           left:'-200px',
           top:'400px',
@@ -745,7 +1059,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearLarge})`,
           backgroundSize:'8%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/2/3/3',
           left:'-500px',
           top:'600px',
@@ -758,7 +1071,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearLarge})`,
           backgroundSize:'6%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/2/3/3',
           left:'-750px',
           top:'400px',
@@ -771,7 +1083,6 @@ export default function Dinning() {
           backgroundImage:`url(${BubblesClearLarge})`,
           backgroundSize:'12%',
           backgroundPosition:'center',
-          // backgroundColor:'pink',
           gridArea:'2/2/3/3',
           left:'-750px',
           top:'100px',
@@ -782,7 +1093,7 @@ export default function Dinning() {
 
 
   {/*---------------------------*/}
-  {/*        Right Side         */}
+  {/*   Breakfast Slide Image   */}
   {/*---------------------------*/}
 
   <ParallaxLayer
@@ -806,7 +1117,7 @@ export default function Dinning() {
           backgroundImage:`url(${Coffee})`,
           backgroundSize:'contain',
           top:'895px',
-          left:'125px',
+          left:'140px',
           height:'300px',
           width:'300px',}}>
         </ParallaxLayer>
@@ -816,7 +1127,7 @@ export default function Dinning() {
           speed={.4}
           style={{
             top:'-1610px',
-            backgroundImage:`url(${BorderUpperRightWhite})`,
+            backgroundImage:`url(${BorderUpperGold})`,
             backgroundPosition:'top center',
             height:'200px',
             width:'400px',
@@ -839,12 +1150,121 @@ export default function Dinning() {
     </ParallaxLayer>
 
   {/*---------------------------*/}
-  {/*         Left Side         */}
+  {/*     Lunch Slide Image     */}
   {/*---------------------------*/}
+
+  
+  <ParallaxLayer
+      speed={.4}
+      style={{
+        backgroundImage:`url(${BorderCenterWhite})`,
+        backgroundSize:'contain',
+        backgroundPosition:'center',
+        top:'1000px',
+        padding:'10px 0 0 30px',
+        left:'4%',
+        height:'550px',
+        width:'500px',
+        zIndex:'-5'}}
+      offset={lunchStart}>
+
+        <ParallaxLayer
+          speed={.3}
+          style={{
+          position:'relative',
+          backgroundImage:`url(${Emblem})`,
+          backgroundSize:'contain',
+          top:'1525px',
+          left:'50px',
+          height:'300px',
+          width:'300px',}}>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={.4}
+          style={{
+            top:'1900px',
+            backgroundImage:`url(${BorderUpperLeftWhite})`,
+            backgroundPosition:'top center',
+            height:'200px',
+            width:'400px',
+            left:'-165px',
+            }}>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={.2}
+          style={{
+            top:'1275px',
+            backgroundImage:`url(${BorderLowerGold})`,
+            backgroundPosition:'bottom center',
+            height:'200px',
+            width:'400px',
+            left:'-165px',
+            }}>
+        </ParallaxLayer>
+    </ParallaxLayer>
+
+  {/*---------------------------*/}
+  {/*    Dinner Slide Image     */}
+  {/*---------------------------*/}
+
+  
+  <ParallaxLayer
+      speed={.4}
+      style={{
+        backgroundImage:`url(${BorderCenterWhite})`,
+        backgroundSize:'contain',
+        backgroundPosition:'center',
+        top:'1200px',
+        padding:'10px 0 0 30px',
+        left:'70%',
+        height:'550px',
+        width:'500px',
+        zIndex:'-5'}}
+      offset={dinnerStart}>
+
+        <ParallaxLayer
+          speed={.3}
+          style={{
+          position:'relative',
+          backgroundImage:`url(${Emblem})`,
+          backgroundSize:'contain',
+          top:'2250px',
+          left:'150px',
+          height:'300px',
+          width:'300px',}}>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={.4}
+          style={{
+            top:'2885px',
+            backgroundImage:`url(${BorderUpperGold})`,
+            backgroundPosition:'top center',
+            height:'200px',
+            width:'400px',
+            left:'249.5px',
+            }}>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          speed={.2}
+          style={{
+            top:'1725px',
+            backgroundImage:`url(${BorderLowerRightWhite})`,
+            backgroundPosition:'bottom center',
+            height:'200px',
+            width:'400px',
+            left:'249.5px',
+            }}>
+        </ParallaxLayer>
+    </ParallaxLayer>
+
 
 
   {/*--------------------------*/}  
-  {/*      Breakfast Image     */}
+  {/*   Breakfast Menu Image   */}
   {/*--------------------------*/}
 
     <ParallaxLayer
@@ -1069,25 +1489,8 @@ export default function Dinning() {
   {/*       First Blur Box      */}
   {/*---------------------------*/}
 
-    <ParallaxLayer
-      offset={firstBlurBox}
-      speed={slowBlurBoxSpeed}
-      style={{
-        display:'grid',
-        zIndex:'10',
-        placeItems:'center',
-        color:'red',
-        fontSize:'5rem',
-        width:'54%',
-        height:'10%',
-        margin:'0 auto 0 23.5%',
-        backgroundColor:'rgb(217 217 217/ 0.5)',
-        backdropFilter:'blur(10px)'}}>
-      <h2>Lunch Menu</h2>
-    </ParallaxLayer>
-
   {/*---------------------------*/}
-  {/*       Shade Blur Box      */}
+  {/*    Lunch Shade Blur Box   */}
   {/*---------------------------*/}
 
   <ParallaxLayer
@@ -1099,38 +1502,61 @@ export default function Dinning() {
         // border:'5px solid red',
         color:'red',
         fontSize:'5rem',
-        width:'54%',
         height:'15%',
         zIndex:'5',
-        margin:'0 auto 0 23.5%',
+        // margin:'0 auto 0 23.5%',
         backgroundColor:'rgb(217 217 217/ 0.5)',
-        backdropFilter:'blur(10px)'}}>
+        backdropFilter:'blur(10px)',
+        // background:'teal',
+        }}>
     </ParallaxLayer>
 
+    <ParallaxLayer
+      offset={3.97}
+      speed={1.3}
+      style={{
+        display:'grid',
+        placeItems:'center',
+        color:'red',
+        fontSize:'5rem',
+        height:'15%',
+        zIndex:'16',
+        top:'550px',
+        // margin:'0 auto 0 23.5%',
+        backgroundColor:'rgb(217 217 217/ 0.8)',
+        backdropFilter:'blur(10px)'
+        // background:'rgb(94, 90, 88)',
+        // background:'white'
+        }}>
 
+    </ParallaxLayer>
 
   {/*---------------------------*/}
-  {/*      Second Blur Box      */}
+  {/*  Lunch Second Blur Box    */}
   {/*---------------------------*/}
 
     <ParallaxLayer
-      offset={secondBlurBox}
-      speed={fastBlurBoxSpeed}
+      // offset={secondBlurBox}
+      offset={4}
+      // speed={fastBlurBoxSpeed}
+      speed={3}
       style={{
         textAlign:'center',
         color:'red',
         fontSize:'7rem',
-        width:'54%',
         height:'15%',
-        margin:'-50px auto 0 23.5%',
-        backgroundColor:'rgb(217 217 217/ 0.5)',
-        backdropFilter:'blur(2px)',
+        top:'-100px',
+        backgroundColor:'rgb(94 90 88 / 1)',
+        backdropFilter:'blur(5px)',
+        // background:'orange',
+        // opacity:'0.3',
+        zIndex:'10',
         display:'grid',
         placeItems:'center'}}>
     </ParallaxLayer>
 
   {/*---------------------------*/}  
-  {/*           Lunch           */}
+  {/*      Lunch Menu Image     */}
   {/*---------------------------*/}
 
     <ParallaxLayer
@@ -1354,52 +1780,270 @@ export default function Dinning() {
 
 
   {/*---------------------------*/}
-  {/*       Third Blur Box      */}
+  {/*       Dinner Blur Box     */}
   {/*---------------------------*/}
 
-  <ParallaxLayer
+  {/* <ParallaxLayer
       offset={thirdBlurBox}
       speed={slowBlurBoxSpeed}
       style={{
         display:'grid',
         placeItems:'center',
-        // border:'5px solid red',
         color:'red',
         fontSize:'5rem',
-        width:'54%',
         height:'22%',
-        margin:'0 auto 0 23.5%',
         backgroundColor:'rgb(217 217 217/ 0.5)',
         backdropFilter:'blur(10px)'}}>
       <h2>Dinner Menu</h2>
-    </ParallaxLayer>
+    </ParallaxLayer> */}
 
   {/*---------------------------*/}
-  {/*      Fourth Blur Box      */}
+  {/*      Dinner Blur Box      */}
   {/*---------------------------*/}
 
-    <ParallaxLayer
+    {/* <ParallaxLayer
       offset={fourthBlurBox}
       speed={fastBlurBoxSpeed}
       style={{
         textAlign:'center',
         color:'red',
         fontSize:'7rem',
-        // border:'5px solid gold',
-        width:'54%',
         height:'15%',
-        margin:'-50px auto 0 23.5%',
         backgroundColor:'rgb(217 217 217/ 0.5)',
         backdropFilter:'blur(2px)',
         display:'grid',
         placeItems:'center'}}>
-      
+    </ParallaxLayer> */}
+
+
+  {/*---------------------------*/}
+  {/*        Dinner Banner      */}
+  {/*---------------------------*/}
+
+  <ParallaxLayer
+          offset={5}
+          speed={0.9}
+          style={{
+            position:'relative',
+            background:'#5E5A58',
+            background:'rgb(62 62 62 /0.9)',
+            height:'5%',
+            top:'50px',
+            zIndex:'50',
+            color:'white',
+            fontSize:'10rem',
+            textAlign:'center',
+            paddingBottom:'0px',
+            paddingTop:'165px',
+          }}>
+          <p>Dinner</p>
+  </ParallaxLayer>
+
+           <ParallaxLayer
+            offset={7}
+            speed={.1}
+             style={{
+               backgroundImage:`url(${Arrow})`,
+               top:'60px',
+               height:'2%',
+               left:'35.8%',
+               width:'1200px',
+               zIndex:'7'
+             }}>
+            </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={7}
+            speed={.5}
+            style={{
+              backgroundImage:`url(${ArrowGold})`,
+              top:'20px',
+              height:'2%',
+              left:'35.8%',
+              width:'1200px',
+              zIndex:'8',
+              scale:'2'
+            }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={7}
+            speed={.9}
+            style={{
+              backgroundImage:`url(${ArrowGray})`,
+              top:'-55px',
+              height:'2%',
+              left:'35.8%',
+              width:'1200px',
+              zIndex:'9',
+              scale:'2.5'
+            }}>
+          </ParallaxLayer>
+    
+
+    <ParallaxLayer
+      offset={6.9}
+      speed={2.6}
+      style={{
+        textAlign:'center',
+        // background:'green',
+        fontSize:'7rem',
+        width:'100%',
+        height:'15%',
+        top:'1700px',
+        zIndex:'60',
+        margin:'0 auto 0 auto',
+        display:'grid',
+        placeItems:'center'}}>
+
+
+        <ParallaxLayer
+          style={{
+            height:'1200px',
+            width:'100%',
+            display:'grid',
+            gridTemplateColumns:'1fr 1fr',
+            gridTemplateRows:'1fr 1fr 1fr',
+            columnGap:'500px',
+          
+          }}
+          >
+
+  {/*---------------------------*/}
+  {/*    Dinner Ornament Left    */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/1/2/2',
+            height:'60%',
+            margin:'auto',
+            top:'950px'}
+            }>
+          </ParallaxLayer>
+
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/1/4/2',
+            height:'60%',
+            margin:'auto',
+            top:'0px'}
+            }>
+          </ParallaxLayer>
+
+
+  {/*---------------------------*/}
+  {/*   Dinner Ornament Right    */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          speed={.3}
+          style={{
+            backgroundImage:`url(${OrnamentUpperRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'1/2/2/3',
+            height:'60%',
+            margin:'auto',
+            top:'950px'}
+            }>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          speed={ornamentSpeedPieces}
+          style={{
+            backgroundImage:`url(${OrnamentLowerRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            gridArea:'3/2/4/3',
+            height:'60%',
+            margin:'auto',
+            top:'0px'}
+            }>
+          </ParallaxLayer>
+
+        </ParallaxLayer>
+      </ParallaxLayer>
+
+
+
+
+
+
+    <ParallaxLayer
+          offset={4.9}
+          speed={1.5}
+          style={{
+            position:'relative',
+            background:'blue',
+            top:'1550px',
+            background:'rgb(217 217 217/0.5)',
+            height:'11%',
+            zIndex:'40',
+            color:'white',
+            fontSize:'10rem',
+            textAlign:'center',
+            paddingBottom:'0px',
+            paddingTop:'175px',
+            // opacity:'.3'
+          }}>
+          {/* <p>First Box</p> */}
+
+    </ParallaxLayer>
+
+    <ParallaxLayer
+          offset={4.7}
+          speed={1.55}
+          style={{
+            position:'relative',
+            background:'orange',
+            // top:'1200px',
+            background:'rgb(69 69 68 / .9)',
+            backdropFilter:'blur(5px)',
+            height:'18.5%',
+            zIndex:'30',
+            color:'white',
+            fontSize:'10rem',
+            textAlign:'center',
+            paddingBottom:'0px',
+            paddingTop:'175px',
+            // opacity:'.8'
+          }}>
+          {/* <p>Second Box</p> */}
+    </ParallaxLayer>
+
+    <ParallaxLayer
+          offset={4.7}
+          speed={2}
+          style={{
+            position:'relative',
+            // background:'black',
+            top:'-100px',
+            background:'rgb(94 90 88 / 1)',
+            height:'17%',
+            zIndex:'20',
+            color:'white',
+            fontSize:'10rem',
+            textAlign:'center',
+            paddingBottom:'0px',
+            paddingTop:'175px',
+            // opacity:'.8'
+          }}>
+          {/* <p>Third Box</p> */}
     </ParallaxLayer>
 
 
-
   {/*---------------------------*/}  
-  {/*          Dinner           */}
+  {/*     Dinner Menu Image     */}
   {/*---------------------------*/}
 
     <ParallaxLayer
@@ -1480,7 +2124,7 @@ export default function Dinning() {
       </div>
 
   {/*--------------------------*/}  
-  {/* Dinner Starter Price  */}
+  {/*   Dinner Starter Price   */}
   {/*--------------------------*/}  
 
       <div className='starterPrice'>
@@ -1618,6 +2262,198 @@ export default function Dinning() {
           <p>P 40.00</p>
         </div>
       </div>
+    </ParallaxLayer>
+    
+  {/*---------------------------*/}
+  {/*        Sunset Banner      */}
+  {/*---------------------------*/}
+
+    <ParallaxLayer
+      offset={9}
+      speed={1.5}
+      style={{
+        top:'-200px',
+        background:'#D9D9D9',
+        height:'1200px',
+        width:'100%',
+      }}>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={9}
+      speed={1.5}
+      style={{
+        top:'-200px',
+        // background:'gray',
+        height:'1200px',
+        width:'100%',
+        zIndex:'100',
+        display:'grid',
+        margin:'0 auto 0 auto',
+        gridTemplateColumns:'1fr 100px 1fr',
+        gridTemplateRows:'500px 100px 500px',
+        columnGap:'100px',
+        rowGap:'50px'
+      }}>
+      </ParallaxLayer>
+
+  {/*---------------------------*/}
+  {/*    Closing Ornament Left  */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          offset={9}
+          speed={1.5}
+          style={{
+            backgroundImage:`url(${OrnamentUpperLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            height:'5%',
+            width:'600px',
+            zIndex:'200'
+            }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          offset={9}
+          speed={1.5}
+          style={{
+            backgroundImage:`url(${OrnamentLowerLeft})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            height:'5%',
+            width:'600px',
+            zIndex:'200',
+            top:'500px',
+            }}>
+          </ParallaxLayer>
+
+
+  {/*---------------------------*/}
+  {/*   Closing Ornament Right  */}
+  {/*---------------------------*/}
+
+          <ParallaxLayer
+          offset={9}
+          speed={1.5}
+          style={{
+            backgroundImage:`url(${OrnamentUpperRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            
+            height:'5%',
+            width:'600px',
+            zIndex:'200',
+            left:'auto',
+            right:'0'
+          }}>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+          offset={9}
+          speed={1.5}
+          style={{
+            backgroundImage:`url(${OrnamentLowerRight})`,
+            backgroundSize:'contain',
+            backgroundPosition:'center',
+            height:'5%',
+            width:'600px',
+            zIndex:'200',
+            top:'500px',
+            left:'auto',
+            right:'0'
+            }}>
+          </ParallaxLayer>
+
+
+
+    <ParallaxLayer
+      offset={9.1}
+      speed={1}
+      style={{
+        backgroundImage:`url(${GrayCircle})`,
+        backgroundSize:'75%',
+        backgroundPosition:'top center',
+        height:'7.4%',
+        width:'950px  ',
+        zIndex:'1',
+        top:'100px',
+        margin:'0 auto 0 auto'
+      }}>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={9.1}
+      speed={1}
+      style={{
+        top:'-900px',
+        backgroundImage:`url(${CircleFrame})`,
+        backgroundPosition:'top center',
+        height:'100%',
+        width:'100%',
+        scale:'.8',
+        zIndex:'3',
+        // margin:'0 auto 0 auto'
+      }}>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={9.1}
+      speed={2.2}
+      style={{
+        top:'200px',
+        backgroundImage:`url(${SunSetTree})`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        scale:'.6',
+        height:'7%',
+        width:'36%',
+        zIndex:'2',
+        margin:'0 auto 0 auto',
+      }}>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={9.1}
+      speed={2.5}
+      style={{
+        backgroundImage:`url(${Sun})`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        scale:'.3',
+        top:'-40px',
+        left:'130px',
+        height:'7%',
+        width:'36%',
+        zIndex:'1',
+        margin:'0 auto 0 auto',
+      }}>
+    </ParallaxLayer>
+    
+    <ParallaxLayer
+      offset={9}
+      speed={1.3}
+      style={{
+        top:'800px',
+        backgroundImage:`url(${GraySand})`,
+        backgroundSize:'contain',
+        backgroundPosition:'center',
+        height:'200px',
+        zIndex:'60',
+        scale:'.6'
+      }}>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={9}
+      speed={1.2}
+      style={{
+        top:'900px',
+        background:'#D9D9D9',
+        height:'200px',
+        width:'100%',
+        zIndex:'50',
+      }}>
     </ParallaxLayer>
 
 

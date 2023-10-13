@@ -1492,6 +1492,7 @@ main{
 .dinningPage .starter
 {
   grid-area:1/2/2/3;
+  padding:10px 0 0 20px
 }
 
 .dinningPage .starterItems{
